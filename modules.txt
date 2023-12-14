@@ -1,0 +1,23 @@
+// добавление картинок без обновления на js
+
+<div class="add-player-img">
+    <label for="EDIT-player-img">Выбрать фото</label>
+    <input accept="image" type="file" id="EDIT-player-img" name="photo">
+    </div>
+      
+    <div class="teamplayer-self-img-container">
+    <img id="EDIT-player-single-photo" style="object-fit: cover">
+    </div>
+
+
+
+ <script>
+       var input = document.querySelector('input[type=file]')
+input.addEventListener('change', onFileChange)
+
+function onFileChange() {
+  var file = input.files[0]
+  // set the <img> src to 'blob://...'
+  document.querySelector('img').src = URL.createObjectURL(file)
+}
+    </script>
